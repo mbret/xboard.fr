@@ -1,4 +1,20 @@
 <?php
+
+define('REQUEST_MICROTIME', microtime(true)); // fix for Zend Developer Tools when php is < 5.4.0.
+
+/**
+ * This makes our life easier when dealing with paths. Everything is relative
+ * to the application root now.
+ */
+
+/**
+ * Display all errors when APPLICATION_ENV is development.
+ */
+ if ($_SERVER['APPLICATION_ENV'] == 'development') {
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
+ }
+ 
 /**
  * This makes our life easier when dealing with paths. Everything is relative
  * to the application root now.
